@@ -43,3 +43,13 @@ h1 {
 	font-family: $font-fancy;
 	font-size:2em;
 }
+#prob-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 9999;
+  a {
+    color: white;
+  }
+}
