@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Problem.destroy_all
+Content.destroy_all
+Rating.destroy_all
+
+a = Problem.create(name: 'I want to find my passion', video_url: 'http://youtu.be/YgvO5iMR7_Q')
+b = Content.create(
+  [
+    { video_url: 'http://youtu.be/gP5WQtAHTfw' },
+    { video_url: 'http://youtu.be/TdkOVLSTc_U' },
+    { video_url: 'http://www.youtube.com/watch?v=vPKfTt1xa1I' }
+  ])
+
+a.contents << b

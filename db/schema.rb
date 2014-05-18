@@ -17,8 +17,7 @@ ActiveRecord::Schema.define(version: 20140518030255) do
   enable_extension "plpgsql"
 
   create_table "contents", force: true do |t|
-    t.string   "title"
-    t.string   "url"
+    t.string   "video_url"
     t.integer  "problem_id"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -27,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140518030255) do
 
   create_table "problems", force: true do |t|
     t.string   "name"
+    t.string   "video_url"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "content_id"
