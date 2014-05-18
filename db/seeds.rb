@@ -9,7 +9,7 @@ Problem.destroy_all
 Content.destroy_all
 Rating.destroy_all
 
-a = Problem.create(name: 'I want to find my passion', video_url: 'http://youtu.be/YgvO5iMR7_Q')
+a = Problem.create(name: 'I want to find my passion', video_url: 'http://youtu.be/EI0tsBZlp6Q')
 b = Content.create(
   [
     { video_url: 'http://youtu.be/gP5WQtAHTfw' },

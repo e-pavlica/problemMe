@@ -40,8 +40,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'angularjs-rails'
 group :development do
-  gem "rails-erd"
+  gem 'rails-erd'
   gem 'jazz_hands'
 end
