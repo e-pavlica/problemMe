@@ -1,0 +1,45 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@font-face { font-family: Rokkit; src: asset-url('Rokkitt.otf'); } 
+@font-face { font-family: JosefinSlab; src: asset-url('JosefinSlab-Regular.ttf'); }
+@font-face { font-family: JosefinSlab; font-weight: bold; src: asset-url('JosefinSlab-Bold.ttf'); }
+
+$mq-break-phone: 480px;
+$mq-break-tab: 768px;
+$mq-break-desk: 980px;
+$mq-break-large: 1200px;
+
+$font-body: JosefinSlab, Helvetica, arial, sans-serif;
+$font-fancy: Rokkit, courier, monotype;
+
+$color-bkg: #222A2D;
+$color-txt: white;
+$color-active: #23D6F6;
+$color-inactive: $8B8B8B;
+
+body {
+	font-family: $font-body;
+	font-size: 1em;
+	background: $color-bkg;
+	text-align: center;
+	padding: 1em;
+	color: $color-txt;
+}
+h1 {
+	font-family: $font-fancy;
+	font-size:2em;
+}
