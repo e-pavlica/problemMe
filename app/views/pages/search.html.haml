@@ -1,0 +1,8 @@
+.pure-g-r(ng-controller='searchController')
+  .pure-u-1-4
+  .pure-u-1-2
+    %form.pure-form
+      %label What's Your Problem?
+      %input#search(type='search' ng-model='searchString')
+      {{ searchString }}
+      %button(type='button' ng-click='searchProblems')

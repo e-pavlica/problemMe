@@ -1,2 +1,13 @@
-- @problems.each do |p|
-  = link_to p.name, problem_path(p)
+/ @problems.each do |p|
+/  = link_to p.name, problem_path(p)
+
+.pure-g-r(ng-controller='problemsController')
+
+  #player1.problem-player.pure-u-1
+    Hello, {{ hello }}!
+    {{ ytLink }}
+
+  #player2.problem-player.pure-u-1
+    Hello, {{ hello }}!
+    {{ ytId }}
+  

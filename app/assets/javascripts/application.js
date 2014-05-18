@@ -14,14 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require angular
+//= require angular-route
 //= require angular-resource
 //= require angular-animate
 //= require problemMeApp
 //= require_tree .
 
-$(document).on('page:load', function() {
-  $('[ng-app]').each(function(){
-    problemMeApp = $(this).attr('ng-app');
-    angular.bootstrap(this, [module]);
-  });
-});
+// $(document).on('page:load', function() {
+//   $('[ng-app]').each(function(){
+//     problemMeApp = $(this).attr('ng-app');
+//     angular.bootstrap(this, [module]);
+//   });
+// });

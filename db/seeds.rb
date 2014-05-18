@@ -14,7 +14,9 @@ b = Content.create(
   [
     { video_url: 'http://youtu.be/gP5WQtAHTfw' },
     { video_url: 'http://youtu.be/TdkOVLSTc_U' },
-    { video_url: 'http://www.youtube.com/watch?v=vPKfTt1xa1I' }
+    { video_url: 'http://www.youtube.com/watch?v=vPKfTt1xa1I' },
+    { video_url: 'http://youtu.be/VnZ9Hg2Rx8g' },
+    { video_url: 'http://youtu.be/xk-gSjmsgXo' }
   ])
 
 a.contents << b
