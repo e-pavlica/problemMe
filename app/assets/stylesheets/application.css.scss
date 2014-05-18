@@ -14,7 +14,7 @@
  *= require_self
  */
 
-@font-face { font-family: Rokkit; src: asset-url('Rokkitt.otf'); } 
+@font-face { font-family: Rokkit; src: asset-url("Rokkitt.otf"); } 
 @font-face { font-family: JosefinSlab; src: asset-url('JosefinSlab-Regular.ttf'); }
 @font-face { font-family: JosefinSlab; font-weight: bold; src: asset-url('JosefinSlab-Bold.ttf'); }
 
@@ -29,7 +29,7 @@ $font-fancy: Rokkit, courier, monotype;
 $color-bkg: #222A2D;
 $color-txt: white;
 $color-active: #23D6F6;
-$color-inactive: $8B8B8B;
+$color-inactive: #8B8B8B;
 
 body {
 	font-family: $font-body;
