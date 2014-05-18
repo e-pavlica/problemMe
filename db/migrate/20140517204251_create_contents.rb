@@ -2,7 +2,7 @@ class CreateContents < ActiveRecord::Migration
   def change
     create_table :contents do |t|
       t.string :title
-      t.string :url # uri for yt, soundcloud, or image (link to quote??)
+      t.string :url
       t.string :type
       t.text :quote_text
       t.string :quote_author

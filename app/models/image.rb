@@ -1,2 +1,0 @@
-class Image < Content
-end
