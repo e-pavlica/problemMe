@@ -1,0 +1,4 @@
+= form_for([@problem, @video], url: problem_contents_path) do |v|
+  = v.label :url
+  = v.text_field :url
+  = v.submit
