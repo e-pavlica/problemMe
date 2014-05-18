@@ -1,8 +1,7 @@
-.pure-g-r(ng-controller='searchController')
-  .pure-u-1-4
-  .pure-u-1-2
-    %form.pure-form
-      %label What's Your Problem?
-      %input#search(type='search' ng-model='searchString')
-      {{ searchString }}
-      %button(type='button' ng-click='searchProblems') Search
+%h1#logo
+  %a{:href => "/"}
+    =image_tag('logo.png')
+%p#intro A streaming user generated documentary that addresses your problem.
+%input{:type => "text", :placeholder => "What is your problem?"}
+%p
+  %a.inactive{:href => "#/problems/#{Problem.last.id}"} Watch video

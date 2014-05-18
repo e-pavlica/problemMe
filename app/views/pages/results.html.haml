@@ -1,8 +1,11 @@
-#prob-logo
-  =link_to 'home', root_path
-
-.pure-g-r
-
-  #player1.problem-player.pure-u-1
-
-  #player2.problem-player.pure-u-1
+%h2#logo
+  %a{:href => "/"}
+    = image_tag 'logo.png'
+.tools
+  %ul
+    %li.favorite
+      %a{:href => "video2.html"} Favorite
+    %li.shuffle
+      %a{:href => ""} Shuffle
+#player1.videocontainer Pretending this is a video
+#player2.videocontainer Pretending this is a video

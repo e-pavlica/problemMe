@@ -2,8 +2,10 @@ problemMeApp.controller('problemsController', function($scope, $document, $windo
   var Problem = $resource('/problems/:id.json', {id: '@id'});
   $scope.problem = Problem.get({id:$routeParams.id});
   $scope.answerNum = 0;
+  
 
-  $scope.answers = $scope.problem.videos
+  
+
   $document.ready(function(){
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
@@ -22,6 +24,7 @@ problemMeApp.controller('problemsController', function($scope, $document, $windo
       playerVars: {
         controls: 0,
         showinfo: 0,
+        rel: 0,
         color: 'white'
       },
       videoId: YouTubeGetID($scope.problem.problem_video),
@@ -36,11 +39,12 @@ problemMeApp.controller('problemsController', function($scope, $document, $windo
       playerVars: {
         controls: 0,
         showinfo: 0,
+        rel: 0,
         color: 'white'
       },
-      videoId: '',
+      videoId: YouTubeGetID($scope.problem.videos[$scope.answerNum].url),
       events: {
-        'onReady': onPlayerReady,
+        // 'onReady': onPlayerReady,
         'onStateChange': onPlayerStateChange
       }
     });
