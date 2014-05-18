@@ -1,11 +1,1 @@
-!!! html
-%html(ng-app='problemMeApp')
-  %head
-    %title Problem Me
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    %link(rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css")
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    %meta(name="viewport" content="width=device-width, initial-scale=1")
-    = csrf_meta_tags
-  %body
-    = yield
+= yield
