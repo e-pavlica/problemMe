@@ -30,10 +30,9 @@ problemMeApp.controller('problemsController', function($scope, $document, $windo
         'onStateChange': onPlayerStateChange
       }
     });
-
     staging = new YT.Player('player2', {
-      height: $window.height(),
-      width: $window.width(),
+      height: $(window).height(),
+      width: $(window).width(),
       playerVars: {
         controls: 0,
         showinfo: 0,
@@ -44,7 +43,6 @@ problemMeApp.controller('problemsController', function($scope, $document, $windo
         'onReady': onPlayerReady,
         'onStateChange': onPlayerStateChange
       }
-
     });
 
   };
