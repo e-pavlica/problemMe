@@ -4,8 +4,8 @@
 .tools
   %ul
     %li.favorite
-      %a{:href => "video2.html"} Favorite
+      %a(href='#' ng-click='favoriteButton($event);') Favorite
     %li.shuffle
       %a{:href => ""} Shuffle
-#player1.videocontainer Pretending this is a video
-#player2.videocontainer Pretending this is a video
+#player1.videocontainer
+#player2.videocontainer.hide

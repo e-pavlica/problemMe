@@ -18,7 +18,8 @@
 @font-face { font-family: JosefinSlab; src: asset-url('JosefinSlab-Regular.ttf'); }
 @font-face { font-family: JosefinSlab; font-weight: bold; src: asset-url('JosefinSlab-Bold.ttf'); }
 
-$mq-break-phone: 480px;
+$mq-break-phone-portrait: 400px;
+$mq-break-phone-landscape: 620px;
 $mq-break-tab: 768px;
 $mq-break-desk: 980px;
 $mq-break-large: 1200px;
@@ -34,8 +35,8 @@ $color-black: black;
 
 body {
   font-family: $font-body;
-  font-size: 1.5em;
-  background: $color-bkg;
+  font-size: 1.4em;
+  background: $color-bkg + #111;
   color: $color-txt;
   text-align: center;
   padding:0;
@@ -46,6 +47,10 @@ h1 {
   font-weight: normal;
   padding: 0;
   margin:1em 0 0;
+    @media screen and (min-width: $mq-break-phone-portrait) {
+      width:150px;
+      margin:0 auto;    
+    }
 }
 img,
 iframe {
@@ -57,10 +62,18 @@ input {
   font-size: 1em;
   color: $color-txt;
   font-family: $font-body;
-  border: 1px solid $color-bkg + #222;
+  border: 1px solid $color-bkg + #666;
   text-align: center;
   max-width:90% !important;
+  :-webkit-input-placeholder, 
+  :-moz-placeholder,
+  ::-moz-placeholder,
+  :-ms-input-placeholder {
+    color: $color-txt;
+  }
+  
 }
+
 a {
   color: $color-active;
   text-decoration: none;
@@ -78,17 +91,24 @@ p {
   &#intro {
     max-width: 440px;
     margin: 0 auto 1em;
+    line-height: 1.75em;
+    letter-spacing: 0.1em;
+    @media screen and (min-width: $mq-break-phone-portrait) {
+      line-height: 1.2em;
+      font-size:1em;
+    }
   }
 }
 h2 {
   &#logo {
     position: absolute;
     top: 0.5em;
-    left: 0.5em;
+    left: 1em;
     width: 110px;
     margin: 0;
     padding: 0;
-    opacity: 50%;
+    opacity: 0.6;
+    z-index: 100000000000;
   }
 }
 .videocontainer, 
@@ -102,7 +122,8 @@ iframe {
 .tools {
   position: absolute;
   top: 0;
-  right: 0.5em;
+  right: 1em;
+  z-index: 100000000000;
   li {
     list-style: none;
     list-style-image: none;
@@ -120,4 +141,9 @@ iframe {
       color: transparent;
     }
   }
+}
+$mq-break-phone: 480px;
+
+.hide {
+  display:none;
 }

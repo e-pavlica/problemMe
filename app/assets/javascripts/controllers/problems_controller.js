@@ -22,7 +22,7 @@ problemMeApp.controller('problemsController', function($scope, $document, $windo
       height: $(window).height(),
       width: $(window).width(),
       playerVars: {
-        controls: 0,
+        controls: 1,
         showinfo: 0,
         rel: 0,
         color: 'white'
@@ -37,7 +37,7 @@ problemMeApp.controller('problemsController', function($scope, $document, $windo
       height: $(window).height(),
       width: $(window).width(),
       playerVars: {
-        controls: 0,
+        controls: 1,
         showinfo: 0,
         rel: 0,
         color: 'white'
@@ -57,15 +57,43 @@ problemMeApp.controller('problemsController', function($scope, $document, $windo
 
   var done = false;
   function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
-      setTimeout(stopVideo, 6000);
-      done = true;
+    if (event.data == YT.PlayerState.ENDED) {
+      // setTimeout(stopVideo, 6000);
+      // done = true;
+      playNextVideo();
+      $scope.answerNum += 1;
     }
   }
-  function stopVideo() {
-    player.stopVideo();
+  function playNextVideo() {
+    if ($scope.answerNum % 2 == 0) {
+      $('#player1').fadeOut();
+      $('#player2').fadeIn();
+      staging.playVideo();
+      // cue new video in player
+      player.cueVideoById(YouTubeGetID($scope.problem.videos[$scope.answerNum].url))
+    } else if ($scope.answerNum !== $scope.problem.videos.length - 1){
+      $('#player2').fadeOut();
+      $('#player1').fadeIn();
+      player.playVideo();
+      // cue new video in staging
+      staging.cueVideoById(YouTubeGetID($scope.problem.videos[$scope.answerNum].url))
+    } else {
+      player.destroy();
+      staging.destroy();
+      $('#player1').html('<h3>You\'ve reached the last video.</h3>');
+      $('#player2').fadeOut();
+      $('#player1').fadeIn();
+    }
   }
 
+  $scope.userSelectsNext = function() {
+    playNextVideo();
+  };
+
+  $scope.favoriteButton = function($event) {
+    $event.preventDefault();
+    $event.target.addClass('active');
+  };
 
 
 });
